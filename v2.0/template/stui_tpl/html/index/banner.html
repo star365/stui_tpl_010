@@ -1,0 +1,14 @@
+<div class="stui-banner clearfix">
+	<div class="carousel carousel_wide">
+		{maccms:vod num="3" type="all" order="desc" by="time" level="5"}
+		<div class="stui-banner__item">
+			<a class="stui-banner__pic" href="{:mac_url_vod_detail($vo)}" style="background: url({:mac_url_img($vo.vod_pic_slide)} no-repeat";></a>
+		</div>
+		{/maccms:vod}			
+	</div>
+</div> 
+<style type="text/css">
+	.stui-banner__pic{ padding-top: 30%; background-position: center center !important;}
+	@media (max-width:1023px){.stui-banner__pic{ padding-top: 45%; background-position: 50% 50% !important; background-size: cover !important;}}
+	@media (max-width:767px){.stui-banner__pic{ padding-top: 55%; background-position: 50% 50% !important; background-size: cover !important;}}
+</style>

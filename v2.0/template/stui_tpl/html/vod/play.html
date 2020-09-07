@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_play"}   
+	{include file="block/include"}
+	<script type="text/javascript" src="{$maccms.path}statics/js/stui_history.js"></script>
+	<script type="text/javascript">var vod_name='{$obj.vod_name|mac_substring=10}',vod_url=window.location.href,vod_part='{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}';</script>
+</head>
+<body>
+	{include file="block/head"}
+	<div class="stui-player">
+		<div class="container">
+        	<div class="row">
+        		{include file="vod/player"}<!-- 播放器-->	
+        	</div>
+       </div>
+	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-wide-75 col-xs-1">		
+				{include file="vod/playlist"}<!-- 播放地址-->		
+				{include file="vod/like"}<!-- 猜你喜欢-->
+			</div>
+			<div class="col-lg-wide-25 col-xs-1 stui-pannel-side hidden-sm hidden-xs">					
+				{include file="vod/hot"}<!-- 热播-->
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript">$(".MacPlayer").addClass("embed-responsive").css("padding-bottom","56.25%");</script>
+    <span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-type="hits"></span>
+	{include file="block/foot"}
+</body>
+</html>
